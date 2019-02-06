@@ -4,4 +4,11 @@ const getUptime = () => {
     client.say('#meeseekeria', os.uptime());
 }
 
-module.exports = { getUptime };
+module.exports = {
+    getUptime,
+    data : [{
+        command     : '!uptime',
+        callback    : getUptime,
+        public      : true
+    }]
+};

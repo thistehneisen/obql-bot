@@ -9,8 +9,10 @@ fs.readdirSync(__dirname + '/config').forEach(function(file) {
 
 console.log('Loading commands:');
 
+commands = [];
 fs.readdirSync(__dirname + '/commands').forEach(function(file) {
-    commands = require('./commands/' + file);
+    command = require('./commands/' + file);
+    commands.push(command.data);
     console.log('- Command ' + file + ' has been loaded.');
 });
 
