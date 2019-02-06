@@ -1,0 +1,27 @@
+{
+  "name": "obql-bot",
+  "version": "1.0.0",
+  "description": "just another bot for we'll see what",
+  "main": "bot.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thistehneisen/obql-bot.git"
+  },
+  "keywords": [
+    "obql",
+    "irc",
+    "bot"
+  ],
+  "author": "www.nils.digital",
+  "license": "SEE LICENSE IN whatever.license.v7000",
+  "bugs": {
+    "url": "https://github.com/thistehneisen/obql-bot/issues"
+  },
+  "homepage": "https://github.com/thistehneisen/obql-bot#readme",
+  "dependencies": {
+    "irc": "^0.5.2"
+  }
+}
