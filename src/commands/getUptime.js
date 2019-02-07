@@ -1,15 +1,18 @@
 var os = require('os');
+const humanizeDuration = require('humanize-duration');
 
-const getUptime = () => {
-    console.log('action retrieved');
-    client.say('#meeseekeria', os.uptime());
+const getUptime = (data) => {
+    client.say(data.to, humanizeDuration(process.uptime() * 1000) + ', hw: ' + humanizeDuration(os.uptime() * 1000));
 }
+
+const data = [{
+    command     : 'uptime',
+    callback    : getUptime,
+    public      : true,
+    receive     : ['from', 'to']
+}];
 
 module.exports = {
     getUptime,
-    data : [{
-        command     : 'uptime',
-        callback    : getUptime,
-        public      : true
-    }]
+    data
 };

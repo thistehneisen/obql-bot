@@ -1,14 +1,12 @@
 var fs = require('fs');
 
 console.log('Loading configuration:');
-
 fs.readdirSync(__dirname + '/config').forEach(function(file) {
     config = require('./config/' + file);
     console.log('- Configuration ' + file + ' has been loaded.');
 });
 
 console.log('Loading commands:');
-
 commands = [];
 fs.readdirSync(__dirname + '/commands').forEach(function(file) {
     command = require('./commands/' + file);
@@ -21,8 +19,6 @@ commands.forEach(function(moduleCommands) {
         config.commands[command.command] = command;
     });
 });
-
-console.log(config.commands);
 
 module.exports = {
     config,

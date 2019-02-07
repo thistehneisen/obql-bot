@@ -1,7 +1,7 @@
 var irc = require('irc');
 var src = require('./src');
 
-var client = new irc.Client('chat.freenode.net', config.nickname, {
+global.client = new irc.Client('chat.freenode.net', config.nickname, {
     userName: 'null',
     realName: 'https://obql.nils.digital/',
     channels: ['#meeseekeria'],
@@ -12,9 +12,11 @@ client.addListener('message', function (from, to, message) {
     if (command.startsWith(config.commandPrefix)) {
         var command = command.substr(1);
         if (config.commands[command] != undefined) {
-            console.log('executing ' + command);
-            console.log(config.commands.command.callback);
-            eval(config.commands.command.callback);
+            var send = [];
+            config.commands[command].receive.forEach(function(data){
+                send[data] = eval(data);
+            });
+            config.commands[command].callback(send);
         }
     }
 });
