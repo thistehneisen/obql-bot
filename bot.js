@@ -11,13 +11,10 @@ client.addListener('message', function (from, to, message) {
     var command = message.replace(config.nickname + ',', '').replace(config.nickname, '').trim();
     if (command.startsWith(config.commandPrefix)) {
         var command = command.substr(1);
-        if (config.publicCommands[command] != undefined) {
-            if (typeof config.publicCommands[command] == 'string') {
-                client.say('#meeseekeria', from + ', ' + config.publicCommands[command]);
-            }
-            else {
-                config.publicCommands[command];
-            }
+        if (config.commands[command] != undefined) {
+            console.log('executing ' + command);
+            console.log(config.commands.command.callback);
+            eval(config.commands.command.callback);
         }
     }
 });

@@ -16,6 +16,14 @@ fs.readdirSync(__dirname + '/commands').forEach(function(file) {
     console.log('- Command ' + file + ' has been loaded.');
 });
 
+commands.forEach(function(moduleCommands) {
+    moduleCommands.forEach(function(command) {
+        config.commands[command.command] = command;
+    });
+});
+
+console.log(config.commands);
+
 module.exports = {
     config,
     commands
