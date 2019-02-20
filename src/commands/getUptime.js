@@ -8,7 +8,7 @@ const getUptime = (data) => {
 const data = [{
     command     : 'uptime',
     callback    : getUptime,
-    public      : true,
+    public      : false,
     receive     : ['from', 'to']
 }];
 
