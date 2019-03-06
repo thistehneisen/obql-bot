@@ -23,6 +23,9 @@
   "homepage": "https://github.com/thistehneisen/obql-bot#readme",
   "dependencies": {
     "humanize-duration": "git+https://github.com/EvanHahn/HumanizeDuration.js.git",
-    "irc": "^0.5.2"
+    "irc": "^0.5.2",
+    "pouchdb": "^7.0.0",
+    "pouchdb-find": "^7.0.0",
+    "request": "git+https://github.com/request/request.git"
   }
 }
