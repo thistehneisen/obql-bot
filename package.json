@@ -26,6 +26,7 @@
     "irc": "^0.5.2",
     "pouchdb": "^7.0.0",
     "pouchdb-find": "^7.0.0",
+    "pouchdb-upsert": "^2.2.0",
     "request": "git+https://github.com/request/request.git"
   }
 }

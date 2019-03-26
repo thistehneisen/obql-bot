@@ -4,7 +4,7 @@ var src = require('./src');
 global.client = new irc.Client('chat.freenode.net', config.nickname, {
     userName: 'alpha',
     realName: 'https://obql.nils.digital/',
-    channels: ['#developerslv'],
+    channels: ['#meeseekeria'],
 });
 
 client.addListener('message', function (from, to, message) {
