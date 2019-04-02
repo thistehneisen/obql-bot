@@ -1,3 +1,4 @@
+require('dotenv').config();
 var irc = require('irc');
 var src = require('./src');
 
@@ -36,7 +37,13 @@ client.addListener('message', function (from, to, message) {
     }
 });
 
-//setTimeout(function() { console.log(client.nick) }, 5000);
+client.addListener('registered', function (message) {
+    client.send('NICKSERV', 'identify', process.env.IRC_NICKSERV_PASS);
+});
+
+client.addListener('error', function(message) {
+    console.log('IRC Error: ', message);
+});
 
 module.exports = {
     client
