@@ -38,9 +38,9 @@ const subCommand = (action = 'main', data, result, question, id) => {
             if (!result || !result.question)
                 client.say(data.to, 'You currently have no active quiz running. Create one by using !quiz your question');
             else
-                client.say(data.to, 'Your active quiz is: ' + result.question + ' created @ ' + result.time + ' — !quiz gibap to disregard it.');
+                client.say(data.to, 'Your active quiz is: ' + result.question + ' created @ ' + result.time + ' — !quiz gibap to disregard it or !quiz award nickname.');
         } else if (result && result.question) {
-            client.say(data.to, 'Yuo already haz a quiz goin: ' + result.question + ' @ ' + result.time);
+            client.say(data.to, 'Yuo already haz a quiz goin: ' + result.question + ' @ ' + result.time + ' — use !quiz gibap to disregard or !quiz award nickname.');
         } else {
             db.put({
                 _id: id,
@@ -50,7 +50,7 @@ const subCommand = (action = 'main', data, result, question, id) => {
                 if (err) { return console.log(err); }
                 return false;
             });
-            client.say(data.to, 'New quiz started by ' + data.from + ': '+ question);
+            client.say(data.to, 'New quiz started by ' + data.from + ': ' + question + '. Use !quiz gibap or !quiz award nickname when suitable.');
         }
     } else if (action == 'award') {
         if (!result || !result.question) {
