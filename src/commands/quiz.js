@@ -102,7 +102,7 @@ const doQuiz = (data) => {
 const data = [{
     command     : 'quiz',
     callback    : doQuiz,
-    public      : true,
+    public      : false,
     receive     : ['from', 'to', 'message']
 }];
 
