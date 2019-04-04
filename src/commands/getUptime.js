@@ -2,7 +2,7 @@ var os = require('os');
 const humanizeDuration = require('humanize-duration');
 
 const getUptime = (data) => {
-    client.say(data.to, Math.round(humanizeDuration(process.uptime() * 1000)));
+    client.say(data.to, humanizeDuration(process.uptime() * 1000, { round: true }));
 }
 
 const data = [{
