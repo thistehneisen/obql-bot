@@ -33,7 +33,8 @@ client.addListener('message', function (from, to, message) {
                 send[data] = eval(data);
             });
         }
-        cmd.callback(send);
+	if (cmd.hasOwnProperty('callback') == true)
+        	cmd.callback(send);
     }
 });
 
